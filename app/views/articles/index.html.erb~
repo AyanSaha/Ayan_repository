@@ -1,6 +1,8 @@
 <h1>Welcome to Articles</h1>
 
 <h1>Listing all articles</h1>
+<%= link_to 'My Blog', controller: 'articles' %>
+<%= link_to 'New article', new_article_path %>
 <table>
   <tr>
     <th>Title</th>
