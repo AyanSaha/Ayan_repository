@@ -9,7 +9,7 @@
 <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
 <div class="container">
-  <%= link_to "My blog", articles_path %>
+  <%= link_to "My blog" articles_path %>
   <nav>
  <ul class="nav navbar-nav navbar-right" >
  <li><%= link_to "About Us",   '#' %></li>
