@@ -3,21 +3,28 @@
 <h1>Listing all articles</h1>
 <%= link_to 'My Blog', controller: 'articles' %>
 <%= link_to 'New article', new_article_path %>
-<table>
+<div class="container">
+<table class="table table-striped">
+    <thead>
   <tr>
     <th>Title</th>
     <th>Text</th>
   </tr>
- 
+ </thead>
+ <tbody>
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <ul class="pager">
+      <li><td><%= link_to 'Show', article_path(article) %></td></li>
+     <li> <td><%= link_to 'Edit', edit_article_path(article) %></td></li>
+     <li> <td><%= link_to 'Destroy', article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } %></td></li>
+              </ul>
     </tr>
+    </tbody>
   <% end %>
 </table>
+</div>

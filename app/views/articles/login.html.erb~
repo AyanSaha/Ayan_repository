@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<%= form_for:article do |f| %>
+<p>
+ <%= f.label :Username %>
+ <%= f.text_field :Username %>
+</p>
+<p>
+ <%= f.label :Password %>
+ <%= f.text_field :Password %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>

@@ -1,4 +1,7 @@
-<%= form_for :article, url: article_path(@article) do |f| %>
+<div class="container">
+ <div class="jumbotron">
+   <div class="center">
+<%= form_for :article, url: article_path(@article), method: :patch  do |f| %>
 <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -12,5 +15,7 @@
   <p>
     <%= f.submit %>
   </p>
+</div>
 <%= link_to 'Back', articles_path %>
+</div>
 <% end %>

@@ -9,7 +9,10 @@
 <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
 <div class="container">
-  <%= link_to "My blog", articles_path %>
+  <ul class="nav nav-tabs">
+   <li role="presentations" class="active"><%= link_to "My blog", articles_path %></li>
+   <li role="presentations" ><%= link_to "Contact us", articles_path %></li>
+  </ul>
   <nav>
  <ul class="nav navbar-nav navbar-right" >
  <li><%= link_to "About Us",   '#' %></li>
@@ -17,8 +20,11 @@
   </nav>
   </div>
 </header>
+
+
 <div class="container">
 <%= yield %>
 </div>
+<footer>This is footer</footer>
 </body>
 </html>
