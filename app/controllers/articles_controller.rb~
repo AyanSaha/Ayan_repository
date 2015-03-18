@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+before_action :authenticate_user!
+
+def after_sign_in_path_for
+ params[:target] || articles_path
+end
 def index
     @articles = Article.all
   end
@@ -7,6 +12,11 @@ def show
   end
  def new
  end
+ def edit
+    @article = Article.find(params[:id])
+  end
+ 
+
   def create
      @article = Article.new(article_params)
      @article.save

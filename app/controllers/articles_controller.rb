@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+
+
+def after_sign_in_path_for
+ params[:target] || articles_path
+end
 def index
     @articles = Article.all
   end
