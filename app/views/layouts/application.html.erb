@@ -7,24 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
-<div class="container">
-  <ul class="nav nav-tabs">
-   <li role="presentations" class="active"><%= link_to "My blog", articles_path %></li>
-   <li role="presentations" ><%= link_to "Contact us", articles_path %></li>
-  </ul>
-  <nav>
- <ul class="nav navbar-nav navbar-right" >
- <li><%= link_to "About Us",   '#' %></li>
- </ul>
-  </nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">BlogIndia!!</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <h1>Welcome to blog<h1>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <li><%= link_to destroy_model_session_path, :method => :delete do %>
+           <span class="glyphicon glyphicon-log-out"></span>Log out
+           <% end %>
+         </li>
+      </ul>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
   </div>
 </header>
-
-
 <div class="container">
-<%= yield %>
+ <div class="content">
+     <%= yield %>
+ </div>
 </div>
-<footer>This is footer</footer>
+<footer class="footer">
+<p>Copyright (c),Ayan Saha</p>
+</footer>
 </body>
 </html>

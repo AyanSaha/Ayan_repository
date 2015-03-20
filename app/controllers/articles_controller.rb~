@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
-before_action :authenticate_MODEL!
-def home
+before_action :authenticate_model!
+def stored_location_for(resource)
+  nil
+end
+def after_sign_in_path_for
+params[:target] || session_path
 end
 def index
     @articles = Article.all
