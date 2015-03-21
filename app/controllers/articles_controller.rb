@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-
-
+before_action :authenticate_user!
+before_filter :set_last_seen_at, if: proc { user_signed_in? }
 def after_sign_in_path_for
  params[:target] || articles_path
 end
@@ -38,6 +38,9 @@ def destroy
   redirect_to articles_path
 end
 private
+def set_last_seen_at
+  current_user.update_attribute(:last_seen_at, Time.now)
+   end
   def article_params
     params.require(:article).permit(:title, :text)
   end

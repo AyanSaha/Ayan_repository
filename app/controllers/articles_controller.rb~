@@ -38,6 +38,9 @@ def destroy
   redirect_to articles_path
 end
 private
+def set_last_seen_at
+  current_user.update_attribute(:last_seen_at, Time.now)
+   end
   def article_params
     params.require(:article).permit(:title, :text)
   end

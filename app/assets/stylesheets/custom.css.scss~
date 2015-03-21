@@ -11,3 +11,8 @@ padding-top:80px;
  margin-right:auto;
   margin-left:auto;
 }
+.footer
+{position: fixed;
+ bottom: 0;
+ width:100%;
+}

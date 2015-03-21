@@ -1,10 +1,12 @@
-<h1>Welcome to Articles</h1>
-
+<h3>Welcome <font face="tahoma" color="blue"><%= current_user.email %></font>
+ </h3>
+ Last login  at:<%= current_user.last_sign_in_at %><br>
+ Current login :<%= current_user.current_sign_in_at %>
+<div>
 <h1>Listing all articles</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
-<%= link_to 'New article', new_article_path %>
-<div id="grad1">
-<table class="table table-bordered">
+<%= link_to 'Create New article', new_article_path %>
+
+<table class="table table-stripped">
     <thead>
   <tr>
     <th>Title</th>
