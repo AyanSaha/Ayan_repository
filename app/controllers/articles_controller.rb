@@ -13,12 +13,17 @@ def show
  def new
  end
  def edit
+    if current_user.id!=params[:id].to_i then
+        redirect_to articles_path
+     else
     @article = Article.find(params[:id])
+     end
   end
  
 
   def create
      @article = Article.new(article_params)
+      puts article_params
      @article.save
       redirect_to @article
   end
@@ -32,16 +37,21 @@ def update
     end
   end
 def destroy
- @article = Article.find(params[:id])
-  @article.destroy
- 
-  redirect_to articles_path
-end
+      if current_user.id!=params[:id].to_i then
+         redirect_to articles_path
+       else
+       @article = Article.find(params[:id])
+       @article.destroy
+        redirect_to articles_path
+        end
+  end
 private
 def set_last_seen_at
   current_user.update_attribute(:last_seen_at, Time.now)
    end
-  def article_params
-    params.require(:article).permit(:title, :text)
+ def article_params
+    params.require(:article)[:user_id] = current_user.id
+puts params
+    params.require(:article).permit(:title, :text, :user_id)
   end
 end

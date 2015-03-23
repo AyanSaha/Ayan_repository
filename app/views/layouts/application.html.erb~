@@ -24,7 +24,7 @@
          </li>
     <% else %>
 <li><%= link_to new_user_registration_path  do%>
-            <span class="glyphicon glyphicon-user"></span>Login
+            <span class="glyphicon glyphicon-user"></span>Sign up
              <% end %>
         </li>    
     
@@ -44,9 +44,8 @@
 <footer class="navbar navbar-fixed-bottom navbar-inverse">(c)Ayan Saha
 <div>
 <nav class="nav navbar-nav navbar-right">
-<li>Facebook</li>
-<li>Twitter</li>
-<li>Google +</li>
+<li><a href="https://www.facebook.com"><p>Facebookl</p></a></li>
+<li><a href="https://www.twitter.com"><p>Twitter</p></a></li>
 </nav>
 </div>
 </footer>

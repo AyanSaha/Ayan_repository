@@ -1,35 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
- *{
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
 html{
 overflow-y:scroll;
 }
-.content{
-padding-bottom:100px;
-margin-top:40px;
+body{
+padding-top:80px;
 }
 .center
 { width:100px;
  margin-right:auto;
- margin-left:auto;
-}
-warning
-{margin-right:auto;
   margin-left:auto;
- margin-top:30px;
-  margin-bottom:40px;
 }
-footer{
-    height: 70px; 
-    width:100%;
-    position: absolute;
-    left: 0;
-    bottom: 0; 
+.footer
+{position: fixed;
+ bottom: 0;
+ width:100%;
 }
-
