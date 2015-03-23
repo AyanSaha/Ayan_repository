@@ -7,23 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
-<div>  
-<ul class="nav navbar-nav">
- <li class="active"><%= link_to "Home", articles_path %> </li>
- <li><a href="#">About Us</a></li>
-<li><a href="#">Contacts</a></li>
-</ul>
-</div>
-<div>
-<nav class="nav navbar-nav navbar-right" >
-  <% if user_signed_in? %>
-        <li><%= link_to destroy_user_session_path, :method => :delete do %>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"   data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    </div>
+     <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "Home", articles_path %> </li>
+     </ul>
+  
+<div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right" >
+             <% if user_signed_in? %>
+           <li><%= link_to destroy_user_session_path, :method => :delete do %>
            <span class="glyphicon glyphicon-log-out"></span>Log out
            <% end %>
-         </li>
-    <% else %>
-<li><%= link_to new_user_registration_path  do%>
+            </li>
+          <% else %>
+           <li><%= link_to new_user_registration_path  do%>
             <span class="glyphicon glyphicon-user"></span>Sign up
              <% end %>
         </li>    
@@ -32,22 +37,22 @@
        <li><%= link_to new_user_session_path  do%>
             <span class="glyphicon glyphicon-log-in"></span>Login
              <% end %>
-        </li>
-        
+        </li>    
     <% end %>
-   </nav>  
+    </ul>
+   </div>
  </div>
-</header>
+</nav>
 <div class="container">
 <%= yield %>
 </div>
-<footer class="navbar navbar-fixed-bottom navbar-inverse">(c)Ayan Saha
+<footer1 class="navbar navbar-fixed-bottom navbar-inverse">(c)Ayan Saha
 <div>
 <nav class="nav navbar-nav navbar-right">
-<li><a href="https://www.facebook.com"><p>Facebookl</p></a></li>
+<li><a href="https://www.facebook.com"><p>Facebook</p></a></li>
 <li><a href="https://www.twitter.com"><p>Twitter</p></a></li>
 </nav>
 </div>
-</footer>
+</footer1>
 </body>
 </html>

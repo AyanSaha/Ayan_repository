@@ -2,8 +2,12 @@
 @import "bootstrap";
 html{
 overflow-y:scroll;
+
+
 }
 body{
+background-size:100% auto;
+background-image: url("1.jpg");
 padding-top:80px;
 padding-bottom:80px;
 }
@@ -12,8 +16,15 @@ padding-bottom:80px;
  margin-right:auto;
   margin-left:auto;
 }
-.footer
+.footer1
 {position: fixed;
  bottom: 0;
  width:100%;
+}
+.footer{
+    height: 70px; 
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; 
 }
