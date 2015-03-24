@@ -23,9 +23,12 @@ def show
 
   def create
      @article = Article.new(article_params)
-      puts article_params
-     @article.save
-      redirect_to @article
+      if @article.save
+          redirect_to @article
+       else
+       flash[:error]=@article.errors.full_messages[0]
+       render 'new'
+       end
   end
   
 def update

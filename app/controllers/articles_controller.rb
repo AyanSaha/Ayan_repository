@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 before_action :authenticate_user!
 before_filter :set_last_seen_at, if: proc { user_signed_in? }
+load_and_authorize_resource
+
 def after_sign_in_path_for
  params[:target] || articles_path
 end
@@ -26,6 +28,7 @@ def show
       if @article.save
           redirect_to @article
        else
+       flash[:error]=@article.errors.full_messages[0]
        render 'new'
        end
   end

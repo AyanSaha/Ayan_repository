@@ -2,8 +2,6 @@
 <div class="overlay-form">
 
 <%= form_for :article, url: articles_path do |f| %>
-<%= @users.errors.full_messages.first if @user.errors.any? %>
-
 <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -19,4 +17,7 @@
   </p>
 <%= link_to 'Back', articles_path %>
 <% end %>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+ <% end %>
 </div>
