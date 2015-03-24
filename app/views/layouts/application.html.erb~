@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
+
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -46,13 +48,17 @@
 <div class="container">
 <%= yield %>
 </div>
-<footer1 class="navbar navbar-fixed-bottom navbar-inverse">(c)Ayan Saha
+<footer class="navbar navbar-fixed-bottom navbar-inverse">(c)Ayan Saha
 <div>
 <nav class="nav navbar-nav navbar-right">
 <li><a href="https://www.facebook.com"><p>Facebook</p></a></li>
 <li><a href="https://www.twitter.com"><p>Twitter</p></a></li>
 </nav>
 </div>
-</footer1>
+</footer>
+ <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+
 </body>
 </html>

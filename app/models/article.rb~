@@ -1,6 +1,9 @@
 class Article < ActiveRecord::Base
-has_many :comments
-  validates :title, presence: true,
-                    length: { minimum: 5 }
+has_many :comments,dependent: :destroy
+  validates :title, 
+             presence => {:message=> ":Enter title!" },
+              length => {minimum: 5, :message=> ":Title must be 5 characters" }
+   validates :text, presence => {:message=> "Enter some text!"},
+                  length => { minimum: 1, :message=> ":Message is too short"}
 
 end

@@ -1,3 +1,4 @@
+<div class="overlay-form">
 <%= form_for :article, url: article_path(@article), method: :patch  do |f| %>
 <p>
     <%= f.label :title %><br>
@@ -12,5 +13,8 @@
   <p>
     <%= f.submit "Submit", class: "btn btn-info"%>
   </p>
-<%= link_to 'Back', articles_path %>
+<div class="center">
+ <%= link_to 'Back',articles_path %>
 <% end %>
+</div>
+</div>
