@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+acts_as_votable
 has_many :comments,dependent: :destroy
   validates :title, 
              :presence => {:message=> ":Enter title!" },

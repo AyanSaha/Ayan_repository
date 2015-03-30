@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 root 'welcome#home'
   devise_for :users
 resources :articles do
-   resources:comments
-end
- 
+ member do
+  put "like", to: "articles#like"
+  put "unlike", to: "articles#unlike"
+      end
+ resources:comments 
+    end
 end

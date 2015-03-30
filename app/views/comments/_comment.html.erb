@@ -8,7 +8,9 @@
   <%= comment.body %>
 </p>
 <p>
+   <% if @article.user_id == current_user.id or comment.user_id == current_user.id %>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %>
 </p>

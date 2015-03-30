@@ -50,6 +50,21 @@ def destroy
         redirect_to articles_path
         end
   end
+def like
+@article=Article.find(params[:id])
+@article.liked_by current_user
+
+if request.xhr?
+  render json: { count: @content.get_likes.size, id: params[:id] }
+else
+ redirect_to @article
+end
+end
+def unlike
+@article=Article.find(params[:id])
+@article.disliked_by current_user
+ redirect_to @article
+end
 private
 def set_last_seen_at
   current_user.update_attribute(:last_seen_at, Time.now)

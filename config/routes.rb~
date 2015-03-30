@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-root 'articles#home'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+root 'welcome#home'
   devise_for :users
 resources :articles do
-   resources:comments
-end
- 
+ member do
+  put "like", to: "articles#like"
+  put "unlike", to: "articles#unlike"
+      end
+    end
 end

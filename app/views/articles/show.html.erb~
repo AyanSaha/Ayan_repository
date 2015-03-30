@@ -1,3 +1,4 @@
+<div class="overlay-form">
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -7,11 +8,28 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+</div>
 <h2>Comments</h2>
 <%= render @article.comments %>
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
+
+
+<% if user_signed_in? %>
+  <% if current_user.liked? @article %>
+      <%= link_to "Dislike", unlike_article_path(@article), class: 'vote', method: :put, remote: true,data: { toggle_text: 'Like', toggle_href: like_article_path(@content), id: @article.id } %>
+  <% else %>
+      <%= link_to "Like", like_article_path(@article), class: 'vote', method: :put, remote: true ,data: { toggle_text: 'Unlike', toggle_href: like_article_path(@article), id: @article.id }%>
+  <% end %>
+  <span> · </span>
+<% end %>
+
+<span class="votes-count" data-id="<%= @article.id %>">
+  <%= @article.get_likes.size %>
+</span>
+users like this
+<br>
 <%= link_to 'Back', articles_path %>
 <%= link_to 'Edit', edit_article_path(@article) %>
