@@ -11,6 +11,7 @@ class Ability
          can :read, Article
       else
          can [:read, :create], Article
+         can [:like, :unlike], Article
          can [:update, :destroy], Article, :user_id => user.id
        end
      end

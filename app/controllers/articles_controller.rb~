@@ -53,12 +53,12 @@ def destroy
 def like
 @article=Article.find(params[:id])
 @article.liked_by current_user
- redirect_to @article
+ render'articles/like'
 end
 def unlike
-@article=Article.find(params[:id])
-@article.disliked_by current_user
- redirect_to @article
+  @article = Article.find(params[:id])
+    @article.disliked_by current_user
+     redirect_to 
 end
 private
 def set_last_seen_at

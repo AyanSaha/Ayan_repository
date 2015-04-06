@@ -1,0 +1,2 @@
+$('#like').html("<%=j (render :partial => 'articles/like') %>");
+$('.#count').text data.count
