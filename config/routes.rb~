@@ -7,5 +7,6 @@ resources :articles do
   put "like", to: "articles#like"
   put "unlike", to: "articles#unlike"
       end
+ resources:comments 
     end
 end

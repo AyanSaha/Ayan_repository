@@ -4,8 +4,8 @@ root 'welcome#home'
   devise_for :users
 resources :articles do
  member do
-  put "like", to: "articles#like"
-  put "unlike", to: "articles#unlike"
+  patch "like", to: "articles#like"
+  patch "unlike", to: "articles#unlike"
       end
  resources:comments 
     end

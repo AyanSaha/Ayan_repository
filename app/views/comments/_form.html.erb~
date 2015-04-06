@@ -1,3 +1,4 @@
+<div class="overlay-form">
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label :commenter %><br>
@@ -8,6 +9,7 @@
     <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.submit "Submit", class="btn btn-info"%>
+    <%= f.submit "Submit", class: "btn btn-info"%>
   </p>
 <% end %>
+</div>

@@ -4,4 +4,4 @@
   <% else %>
       <%= link_to "Like", like_article_path(@article), class: 'vote', method: :put, remote: true %>
   <% end %>
-  <span> · </span>
+   <% end %>

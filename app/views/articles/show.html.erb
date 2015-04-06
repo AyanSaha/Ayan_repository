@@ -1,4 +1,4 @@
-<div class="overlay-form">
+<div class="overlay-table">
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -9,18 +9,17 @@
   <%= @article.text %>
 </p>
 </div>
-<div id="like">
- <%= render 'articles/like' %>
-</div>
 <h2>Comments</h2>
 <%= render @article.comments %>
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
-<div id="count">
-  <%= @article.get_likes.size %>
+<div id="like">
+ <%= render "articles/like" %>
 </div>
+<span id="votes-count">
+  <%= @article.get_likes.size %>
+</span>
 users like this
 <br>
 <%= link_to 'Back', articles_path %>
