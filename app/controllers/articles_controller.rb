@@ -26,6 +26,7 @@ def show
   def create
      @article = Article.new(article_params)
       if @article.save
+          
           redirect_to @article
        else
        flash[:error]=@article.errors.full_messages[0]

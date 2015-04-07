@@ -26,6 +26,7 @@ def show
   def create
      @article = Article.new(article_params)
       if @article.save
+          flash[:success]="Successfully signed"
           redirect_to @article
        else
        flash[:error]=@article.errors.full_messages[0]
@@ -58,7 +59,7 @@ end
 def unlike
   @article = Article.find(params[:id])
   @article.disliked_by current_user
-    
+     render 'articles/like'
 end
 private
 def set_last_seen_at

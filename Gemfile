@@ -10,7 +10,6 @@ gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'autoprefixer-rails'
 gem 'devise'
-gem 'jquery-rails'
 gem 'cancancan' ,'~>1.10'
 gem 'rails_admin'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,7 +36,9 @@ gem 'acts_as_votable'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :production do
+  gem 'pg'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 root 'welcome#home'
   devise_for :users
+mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 resources :articles do
  member do
   patch "like", to: "articles#like"

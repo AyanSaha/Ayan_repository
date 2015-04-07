@@ -56,7 +56,7 @@
 </div>
 </footer>
   <% flash.each do |key, value| %>
-    <div class="flash <%= key %>><%= value %></div>
+    <div class="flash <%= key %>"><%= value %></div>
   <% end %>
 
   <%= yield %>
